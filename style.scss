@@ -1,0 +1,1571 @@
+// color
+$btn-yellow-color: #F9D783;
+$bg-color: #F0EFE9;
+$text-dark-clr: #191919;
+$footer-bg-clr: #0E1021;
+$white-color: #FFFFFF;
+$text-light-clr: RGBA(255, 255, 255, 0.7);
+$icon-light-clr: RGBA(25, 25, 25, 0.1);
+$span-clr: #F94D1C;
+
+/* Grundstil för navigationsfältet */
+body {
+  // fonts
+  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,500;1,700&display=swap');
+
+  margin: 0;
+  padding: 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $text-dark-clr;
+  }
+
+  .btn {
+    padding: 5px 20px;
+    border-radius: 40px;
+    background-color: $btn-yellow-color;
+    //animation
+    transition: transform 1000ms;
+  }
+  //animation
+  .btn:hover, .btn:focus-visible{
+    transform: translateY(-0.75rem);
+    transition: transform 250ms;
+  }
+
+}
+
+// navbar start
+.navbar {
+  background-color: $bg-color;
+
+  @media (min-width: 768px) {
+    flex-wrap: nowrap !important;
+  }
+
+  .nav {
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 40px;
+    }
+
+    padding: 10px;
+
+    #nav-toggle:checked+.nav-burger+.navbar-menu {
+      display: flex;
+      flex-direction: row;
+
+    }
+
+    .nav-logo {
+      img {}
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+  }
+
+  .nav-burger {
+    cursor: pointer;
+    font-size: 25px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .navbar-menu {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      gap: 20px;
+    }
+
+    .information {
+      display: none;
+      position: relative;
+
+      @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color: $icon-light-clr;
+          left: 0;
+          bottom: -6px;
+        }
+      }
+
+      .contact-Info {
+        @media (min-width: 768px) {
+          display: flex;
+          gap: 10px;
+        }
+
+        @media (min-width: 992px) {
+          gap: 30px;
+        }
+
+        @media (min-width: 1200px) {
+          gap: 40px;
+        }
+
+        li {
+          a {
+            i {
+              margin-left: 5px;
+              margin-right: 3px;
+
+              @media (min-width: 992px) {
+                margin-left: 20px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      .socialmedia {
+        a {
+          padding: 2px;
+
+          @media (min-width: 992px) {
+            padding: 4px;
+          }
+
+          i {}
+        }
+      }
+    }
+
+    .home-nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 15px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+          width: auto;
+        }
+
+        @media (min-width: 992px) {
+          gap: 20px;
+        }
+
+        li {
+          padding: 5px 10px;
+          border-radius: 40px;
+
+          a {
+            position: relative;
+
+            @media (min-width: 992px) {
+              font-weight: 500;
+            }
+          }
+        }
+
+        li:hover {
+          @media (min-width: 768px) {
+            a::after {
+              content: '';
+              width: 20px;
+              height: 1px;
+              background-color: #0E1021;
+              position: absolute;
+              left: 25%;
+              bottom: -8px;
+
+            }
+
+          }
+
+          @media (max-width: 768px) {
+            background-color: $btn-yellow-color;
+
+          }
+
+          a {}
+
+        }
+      }
+
+      .button {
+        margin-top: 10px;
+
+        .btn {
+          i {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .btn:hover {
+        background-color: $text-dark-clr;
+        color: $white-color;
+      }
+    }
+  }
+}
+
+// navbar end
+
+// showcase start
+.showcase {
+  background-color: $bg-color;
+  position: relative;
+
+  .container {
+    padding-bottom: 60px;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      direction: rtl;
+      padding-bottom: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .showcaseItem {
+      @media (min-width: 768px) {
+        direction: ltr;
+      }
+
+      @media (min-width: 992px) {
+        max-width: 480px;
+      }
+
+      .title {
+        font-weight: bolder;
+        font-size: 36px;
+        margin-top: 20px;
+
+        @media (min-width: 992px) {
+          font-size: 60px;
+        }
+      }
+
+      .description {
+        margin: 20px 0;
+
+        @media (min-width: 992px) {
+          margin: 40px 0;
+          font-size: 20px;
+        }
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @media (min-width: 768px) {
+          gap: 0;
+        }
+
+        @media (min-width: 1200px) {
+          margin-top: 100px;
+        }
+
+        .btn {
+          max-width: 200px;
+          justify-self: center;
+          cursor: pointer;
+          z-index: 10;
+
+          @media (min-width: 992px) {
+            max-width: auto;
+          }
+
+          @media (min-width: 992px) {
+            justify-self: flex-start;
+          }
+
+          @media (min-width: 1200px) {
+            padding: 8px 30px;
+          }
+
+          i {
+            margin-left: 10px;
+          }
+        }
+
+        .primaryBtm {
+          i {}
+        }
+
+        .secondaryBtn {
+          background-color: transparent;
+          border: 1px solid $text-dark-clr;
+
+          i {}
+        }
+      }
+    }
+  }
+
+  .effekt {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60%;
+
+    @media (min-width: 768px) {
+      max-width: 50%;
+    }
+  }
+}
+
+// showcase end
+
+//brands start
+.brands {
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .brand {}
+}
+
+//brands end
+
+//feauters start
+.feauters {
+  .container {
+    border: 1px solid $icon-light-clr;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+
+    @media (min-width: 992px) {
+      padding-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: 0.7fr 1fr;
+    }
+
+    .heading {
+      display: grid;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+
+      @media (min-width: 1200px) {
+        max-width: 560px;
+      }
+
+      span {
+        color: $span-clr;
+        justify-self: center;
+
+        @media (min-width: 992px) {
+          justify-self: flex-start;
+        }
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 24px;
+
+        @media (min-width: 1200px) {
+          font-size: 45px;
+        }
+      }
+
+      .btn {
+        i {
+          margin-left: 5px;
+        }
+      }
+
+      .btn:hover {
+        background-color: $text-dark-clr;
+        color: $white-color
+      }
+    }
+
+    .feauters-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 20px;
+
+      .item {
+        @media (min-width: 1200px) {
+          max-width: 307px;
+          padding: 30px;
+        }
+
+        .icon {
+          @media (min-width: 1200px) {
+            margin-bottom: 20px;
+          }
+
+          i {}
+        }
+
+        .title {
+          font-weight: bold;
+        }
+
+        .description {}
+      }
+    }
+
+  }
+
+}
+
+//feauters end
+
+// about company start -->
+.about-company {
+  .container {
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    .image-item {
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+
+      .bg {
+        background-color: #BEEBFF;
+        position: absolute;
+        left: 0;
+        bottom: 100px;
+        height: 120px;
+        width: 260px;
+        padding: 20px;
+
+        @media (min-width: 768px) {
+          left: -20px;
+        }
+
+        .title {
+          font-weight: bold;
+          margin-bottom: 10px;
+
+          span {
+            color: $span-clr;
+            margin-left: 10px;
+          }
+        }
+
+        .description {}
+      }
+    }
+
+    .content {
+      margin: 20px 0;
+
+      span {
+        color: $span-clr;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 24px;
+
+        @media (min-width: 992px) {
+          font-size: 36px;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 45px;
+        }
+      }
+
+      .description {
+        padding: 30px 0;
+
+        @media (min-width: 1200px) {
+          margin-top: 50px;
+        }
+
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 992px) {
+          margin-top: 100px;
+        }
+
+        @media (min-width: 1200px) {
+          margin-top: 150px;
+          justify-content: flex-start;
+        }
+
+        .btn {
+          @media (min-width: 1200px) {
+            padding: 8px 30px;
+          }
+
+        }
+
+        .left {
+          background-color: $text-dark-clr;
+          color: $white-color;
+
+          i {
+            margin-left: 10px;
+          }
+        }
+
+        .right {
+          background-color: transparent;
+          display: flex;
+          align-self: center;
+
+          i {
+            font-size: 30px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// about company end -->
+
+//our service start
+.our-service {
+  background-color: $bg-color;
+  padding: 30px;
+
+  .container {
+    display: grid;
+
+    .heading {
+      span {
+        color: $span-clr;
+
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 30px;
+
+        @media (min-width: 992px) {
+          font-size: 36px;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 45px;
+        }
+      }
+    }
+
+    .boxes {
+      display: grid;
+      row-gap: 10px;
+
+      @media (min-width: 992px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      @media (min-width: 1200px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+      }
+
+      .box {
+        background-color: $white-color;
+        padding: 50px 30px 30px 30px;
+
+        .title {
+          font-weight: bold;
+          position: relative;
+        }
+
+        .title::after {
+          content: '';
+          width: 50px;
+          height: 3px;
+          background-color: black;
+          position: absolute;
+          left: 0;
+          bottom: 40px;
+        }
+
+        .description {}
+
+        .icon {
+          display: flex;
+          justify-content: flex-end;
+
+          i {
+            font-size: 30px;
+          }
+        }
+      }
+
+      .box:hover {
+        background-color: $btn-yellow-color;
+
+        i {
+          color: white;
+        }
+      }
+    }
+
+    .btn {
+      background-color: transparent;
+      border: 1px solid black;
+      margin-top: 20px;
+      justify-self: center;
+
+      i {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+//our service end
+
+//Choose us start
+.choose {
+  .container {
+    @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      direction: rtl;
+    }
+
+    .image-item {
+      position: relative;
+
+      img {
+        width: 80%;
+        margin: 50px;
+
+        @media (min-width: 1200px) {
+          width: 85%;
+        }
+      }
+
+      .image-bg {
+        content: '';
+        position: absolute;
+        height: 60%;
+        width: 100%;
+        background-color: $bg-color;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+
+        @media (min-width: 992px) {
+          bottom: 30px;
+        }
+
+        @media (min-width: 1200px) {
+          bottom: 0;
+        }
+      }
+    }
+
+    .content {
+      margin-top: 40px;
+
+      @media (min-width: 992px) {
+        direction: ltr;
+      }
+
+      span {
+        color: $span-clr;
+      }
+
+      .heading {
+        font-weight: bold;
+        margin-bottom: 20px;
+
+        @media (min-width: 768px) {
+          font-size: 24px;
+          margin-bottom: 40px;
+        }
+
+        @media (min-width: 1200px) {
+          font-size: 36px;
+        }
+      }
+
+      .boxes {
+        @media (min-width: 768px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 50px;
+        }
+
+        @media (min-width: 992px) {
+          grid-template-columns: 1fr;
+          row-gap: 5px;
+        }
+
+        .box {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          margin-bottom: 20px;
+
+          @media (min-width: 1200px) {
+            margin-bottom: 10;
+          }
+
+          .icon {
+            i {
+              font-size: 24px;
+            }
+          }
+
+          .item {
+            .title {
+              font-weight: bold;
+            }
+
+            .description {}
+          }
+        }
+      }
+    }
+  }
+}
+
+//Choose us end
+
+// Project & Case Studies start
+.studies {
+  margin-top: 40px;
+
+  .container {
+    display: grid;
+
+    .heading {
+      display: grid;
+
+      span {
+        color: $span-clr;
+        justify-self: center;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 20px;
+        justify-self: center;
+        padding-bottom: 30px;
+      }
+    }
+
+    .boxes {
+      @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      @media (min-width: 992px) {
+
+        gap: 30px;
+      }
+
+      .box {
+        img {
+          width: 100%;
+
+          @media (min-width: 768px) {
+            aspect-ratio: 3/2;
+          }
+        }
+
+        .title {
+          font-weight: bold;
+          font-size: 20px;
+          position: relative;
+
+        }
+
+        .title::after {
+          content: '';
+          width: 100%;
+          height: 3px;
+          background-color: $icon-light-clr;
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+        }
+
+        .icon {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 20px;
+
+          i {
+            transform: rotate(45deg);
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    .btn {
+      background-color: $text-dark-clr;
+      color: $white-color;
+      justify-self: center;
+      margin-bottom: 30px;
+
+      @media (min-width: 768px) {
+        margin-top: 30px;
+
+      }
+
+      i {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+// Project & Case Studies end 
+
+//Meet our team start
+.team {
+  background-color: $btn-yellow-color;
+
+  .container {
+    display: grid;
+
+    .heading {
+      margin-top: 20px;
+
+      span {
+        color: $span-clr;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+
+        @media (min-width: 768px) {
+          font-size: 30px;
+        }
+      }
+    }
+
+    .btn {
+      background-color: transparent;
+      color: black;
+      border: 1px solid black;
+      justify-self: center;
+      margin-bottom: 30px;
+
+      @media (min-width: 768px) {
+        justify-self: flex-end;
+      }
+
+      i {
+        margin-left: 8px;
+      }
+    }
+
+    .boxes {
+      @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        // gap: 10px;
+      }
+
+      .box {
+        display: grid;
+        margin-bottom: 30px;
+
+        img {
+          width: 50%;
+          justify-self: center;
+
+          @media (min-width: 768px) {
+            width: 70%;
+          }
+        }
+
+        .name {
+          margin-top: 10px;
+          font-weight: bold;
+          justify-self: center;
+        }
+
+        .title {
+          justify-self: center;
+        }
+      }
+    }
+
+    .current {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+
+      .circle {
+        &:nth-child(2) {
+          background-color: black;
+        }
+
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        background-color: $icon-light-clr;
+      }
+    }
+  }
+}
+
+//Meet our team end
+
+//Testimonial start
+.testimonial {
+  padding: 20px;
+  background-color: $btn-yellow-color;
+  display: grid;
+
+  @media (min-width: 768px) {
+    padding-bottom: 40px;
+  }
+
+  @media (min-width: 992px) {
+    padding-bottom: 60px;
+  }
+
+  .container {
+    display: grid;
+    background-color: $white-color;
+
+    .heading {
+      margin-top: 40px;
+
+      span {
+        color: $span-clr;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+
+    .boxes {
+      margin-top: 30px;
+      display: grid;
+      row-gap: 30px;
+
+      @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+      }
+
+      .box {
+        .stars {
+          i {
+            color: $span-clr;
+          }
+        }
+
+        .description {
+          margin-bottom: 20px;
+        }
+
+        .client {
+          display: flex;
+          gap: 10px;
+
+          img {
+            aspect-ratio: 1/1;
+            width: 10%;
+            border-radius: 50%;
+
+            @media (min-width: 992px) {
+              width: 15%;
+            }
+          }
+
+          .client-info {
+            .name {
+              font-weight: bold;
+            }
+
+            .job {}
+          }
+        }
+      }
+    }
+
+    .btn {
+      background-color: $text-dark-clr;
+      color: $white-color;
+      justify-self: center;
+      margin: 30px 0;
+
+      i {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+//Testimonial end
+
+//Article start
+.article {
+  margin-top: 30px;
+
+  .container {
+    .header {
+      display: grid;
+
+      @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+
+      .heading {
+        span {
+          color: $span-clr;
+        }
+
+        .title {
+          font-weight: bold;
+          font-size: 24px;
+        }
+      }
+
+      .btn {
+        justify-self: center;
+        background-color: transparent;
+        border: 1px solid black;
+        margin: 10px 0;
+
+        i {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .boxes {
+      display: grid;
+      row-gap: 40px;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+      }
+
+      @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .box {
+        position: relative;
+
+        img {
+          width: 100%;
+          margin-bottom: 20px;
+
+          @media (min-width: 768px) {
+            aspect-ratio: 3/2;
+          }
+        }
+
+        .date {
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          display: grid;
+          background-color: $btn-yellow-color;
+          width: 50px;
+
+          span {
+            justify-self: center;
+            display: block;
+            font-weight: 500;
+          }
+        }
+
+        .category {
+          // margin: 50px 0;
+        }
+
+        .title {
+          font-weight: bold;
+          margin: 10px 0;
+        }
+
+        .description {}
+      }
+    }
+  }
+
+  .current {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    .circle {
+      &:nth-child(2) {
+        background-color: black;
+      }
+
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: $icon-light-clr;
+    }
+  }
+}
+
+//Article end
+
+//Signup start
+.signup {
+  position: relative;
+  background-color: $bg-color;
+  padding: 40px; 
+  padding-bottom: 60px;
+  .container {
+    @media (min-width: 768px) {
+      display: grid;
+    }
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, auto);
+    }
+    .heading {
+      margin-bottom: 20px;
+      @media (min-width: 768px) {
+        justify-self: center;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 24px;
+      }
+    }
+    .subscribe{
+      @media (min-width: 768px) {
+        justify-self: center;
+      }
+      input {
+        border-radius: 50px;
+        padding: 5px 15px;
+        border: none;
+      }
+      input:focus{
+        outline: none;
+      }
+      .btn {
+        margin-left: 20px;
+        i {
+          margin-left: 8px;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 20%;
+      @media (min-width: 992px) {
+        width: 10%;
+      }
+    }
+  }
+}
+
+//Signup end
+
+// Footer start
+footer {
+  background-color: $footer-bg-clr;
+  position: relative;
+
+  .container {
+    display: grid;
+    row-gap: 20px;
+    padding: 30px;
+    padding-bottom: 100px;
+
+    @media (min-width: 992px) {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .logo {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 10px;
+
+      @media (min-width: 992px) {
+        grid-template-columns: 1fr;
+      }
+
+      img {}
+
+      .logo-toggle {
+        display: none;
+      }
+
+      .logo-collapse {
+        color: white;
+        justify-self: flex-end;
+        cursor: pointer;
+
+        @media (min-width: 992px) {
+          display: none;
+        }
+      }
+
+      #logo-toggle:checked+.logo-collapse+.description {
+        display: grid;
+      }
+
+      #logo-toggle:checked+.logo-collapse {
+        transform: rotate(180deg);
+      }
+
+      .description {
+        display: none;
+        margin-top: 10px;
+        color: $text-light-clr;
+
+        @media (min-width: 992px) {
+          display: flex;
+        }
+      }
+
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 10px;
+
+      @media (min-width: 992px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .title {
+        color: white;
+
+        @media (min-width: 992px) {}
+      }
+
+      input {
+        display: none;
+      }
+
+      label {
+        color: white;
+        justify-self: flex-end;
+        cursor: pointer;
+
+        @media (min-width: 992px) {
+          display: none;
+        }
+      }
+
+      #company-toggle:checked+.company-collapse+.company-links {
+        display: grid;
+      }
+
+      #company-toggle:checked+.company-collapse {
+        transform: rotate(180deg);
+      }
+
+      #help-toggle:checked+.help-collapse+.company-links {
+        display: grid;
+      }
+
+      #help-toggle:checked+.help-collapse {
+        transform: rotate(180deg);
+      }
+
+      #resurces-toggle:checked+.resurces-collapse+.company-links {
+        display: grid;
+      }
+
+      #resurces-toggle:checked+.resurces-collapse {
+        transform: rotate(180deg);
+      }
+
+      #links-toggle:checked+.links-collapse+.company-links {
+        display: grid;
+      }
+
+      #links-toggle:checked+.links-collapse {
+        transform: rotate(180deg);
+      }
+
+      .company-links {
+        display: none;
+        row-gap: 5px;
+
+        @media (min-width: 992px) {
+          margin-top: 20px;
+          display: grid;
+          row-gap: 30px;
+        }
+
+        a {
+          color: $text-light-clr;
+
+          @media (min-width: 992px) {
+            line-height: 3px;
+          }
+        }
+      }
+    }
+  }
+
+  .effekt {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+
+    .copyright {
+      color: $text-light-clr;
+      font-size: 14px;
+
+      @media (min-width: 992px) {
+        font-size: 1rem;
+      }
+    }
+
+    .social-media {
+      a {
+        color: white;
+
+        @media (min-width: 992px) {
+          padding: 0 10px;
+        }
+
+        i {
+          font-size: 14px;
+
+          @media (min-width: 992px) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Footer end
+
+//contact page
+//beadcrumb start
+.contact-breadcrumb{
+  background-color: $bg-color;
+  display: grid;
+  position: relative;
+  padding-bottom: 50px;
+  .header{
+    display: grid;
+    justify-self: center;
+    margin-bottom: 30px;
+    .menu{
+      display: flex;
+      gap: 10px;
+      .current{
+        font-weight: bold;
+      }
+    }
+  }
+  .title{
+    font-weight: bold;
+    justify-self: center;
+    font-size: 24px;
+    @media (min-width: 992px) {
+      font-size: 45px;
+    }
+  }
+  img{
+    position: absolute;
+    max-width: 50%;
+    left: 0;
+    bottom: 0;
+    max-height: 200px;
+    
+  }
+}
+//breadcrumb end
+
+// contact info start
+.contact-info{
+  padding: 60px;
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+  .container{
+    .boxes{
+      display: grid;
+      row-gap: 10px;
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+      }
+      @media (min-width: 992px) {
+        gap: 20px;
+      
+      }
+      .box{
+        border: 1px solid $icon-light-clr;
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        @media (min-width: 992px) {
+          justify-content: center;
+          padding: 40px;
+        
+        }
+        .icon{
+          justify-self: center;
+          i{
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+          }
+        }
+        .content{
+          .title{
+            font-weight: bold;
+          }
+          div{}
+        }
+      }
+    }
+  }
+}
+//contact info end
+ // contact-form start
+ .contact-form{
+  margin-bottom: 40px;
+  @media (min-width: 992px) {
+    margin-bottom: 120px;
+  }
+  .container{
+    display: grid;
+    background-color: $bg-color;
+    padding: 30px;
+    @media (min-width: 768px) {
+      padding: 30px 60px;
+    }
+    @media (min-width: 992px) {
+      padding: 30px 150px 50px 150px;
+    }
+    .title{
+      font-weight: bold;
+      padding: 20px;
+      justify-self: center;
+      font-size: 18px;
+      @media (min-width: 768px) {
+        font-size: 24px;
+      }
+    }
+    form{
+      display: grid;
+      row-gap: 10px;
+      input{
+        border-radius: 40px;
+        border: none;
+        padding: 5px 20px;
+      }
+      input:focus{
+        outline: none;
+      }
+      textarea{
+        border-radius: 20px;
+        border: none;
+        padding: 10px 20px;
+      }
+      textarea:focus{
+        outline: none;
+      }
+      .btn{
+        @media (min-width: 992px) {
+          margin-top: 30px;
+        }
+        i{
+          margin-left: 10px;
+        }
+      }
+      .btn:hover{
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+ }
+ //contact-form end
+
+ iframe{
+  width: 100%;
+ }
